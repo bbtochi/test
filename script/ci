@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -x
+
+export GOPATH=$(mktemp -d)
+mkdir -p $GOPATH/src/github.com/denis
+ln -vfs $(pwd) $GOPATH/src/github.com/denis/classes
+cd $GOPATH/src/github.com/denis/classes
+
+case "$TEST_RUNNER" in
+  pre)
+    ls -lah
+    go build -v
+    ls -lah
+    rm /tmp/classes
+    cp classes /tmp/
+    ;;
+  main)
+    go test -v
+    ;;
+  models)
+    go test -v ./models
+    ;;
+  post)
+    cp /tmp/classes .
+    ./classes
+    ;;
+  *)
+    echo "Unknown TEST_RUNNER: $TEST_RUNNER" && exit 1
+    ;;
+esac

@@ -1,0 +1,11 @@
+test_command: script/ci
+
+targets:
+  - type: pre
+    queue_override: pipeline-test
+  - type: main
+    queue_override: pipeline-test
+  - type: models
+    queue_override: pipeline-test
+  - type: post
+    queue_override: pipeline-test
