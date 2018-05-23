@@ -3,9 +3,11 @@ test_command: script/ci
 targets:
   - type: pre
   - type: main
-    requires: pre
+    requires:
+    - pre
   - type: models
-    requires: pre
+    requires:
+    - pre
   - type: post
     requires:
       - main
