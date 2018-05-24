@@ -4,5 +4,13 @@ targets:
   - type: l1a
   - type: l1b
   - type: l2a
+    requires:
+      - l1a
   - type: l2b
+    requires:
+      - l1a
   - type: l3a
+    requires:
+      - l1b
+      - l2a
+      - l2b
