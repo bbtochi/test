@@ -1,5 +1,9 @@
 test_command: script/ci
 
+ruby:
+  - 2.3.1
+  - 2.5.1
+
 targets:
   - type: l1a
   - type: l1b
