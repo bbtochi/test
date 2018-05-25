@@ -7,7 +7,7 @@ ruby:
 targets:
   - type: l1a
     requires:
-      - l2a
+      - l1a
   - type: l1b
   - type: l2a
     requires:
