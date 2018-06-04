@@ -6,14 +6,20 @@ ruby:
 targets:
   - type: l1a
   - type: l1b
+    workers: 5
   - type: l2a
-    requires:
-      - l1a
-  - type: l2b
-    requires:
-      - l1a
-  - type: l3a
-    requires:
-      - l1b
-      - l2a
-      - l2b
+    workers: 5
+#targets:
+#  - type: l1a
+#  - type: l1b
+#  - type: l2a
+#    requires:
+#      - l1a
+#  - type: l2b
+#    requires:
+#      - l1a
+#  - type: l3a
+#    requires:
+#      - l1b
+#      - l2a
+#      - l2b
